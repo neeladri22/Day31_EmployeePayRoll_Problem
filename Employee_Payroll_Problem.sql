@@ -100,6 +100,35 @@ set BasicPay = 20000, Deductions = 1000, TaxablePay = 1000, IncomeTax = 200, Net
 
 
 
+--Altering the column deparment to not null
+ALTER table employee_payroll
+alter column department varchar(20) not null
+
+--Altering the column address to not null
+ALTER table employee_payroll
+alter column address varchar(25)  not null
+
+--ionsert the data into employee_payroll table
+insert into employee_payroll values ('Hema',20000,'2019-12-15','M',7415829633,'Amazon','Production')
+
+--Altering the table by adding additional information regarding salaryies of employee
+ALTER TABLE employee_payroll
+add BasicPay float, Deductions float, TaxablePay float, IncomeTax float, NetPay float
+
+--updating the phone, address and department field 
+update employee_payroll
+set BasicPay = 25000, Deductions = 2000, TaxablePay = 1000, IncomeTax = 500, NetPay= 21500 where name = 'Neeladri'
+
+update employee_payroll
+set BasicPay = 20000, Deductions = 1000, TaxablePay = 1000, IncomeTax = 200, NetPay= 18000 where name = 'Usha'
+
+update employee_payroll
+set BasicPay = 35000, Deductions = 2500, TaxablePay = 1500, IncomeTax = 500, NetPay= 30000 where name = 'Raji'
+
+
+--Insert employee details
+insert into employee_payroll values ('Padma', 35000, '2018-05-06', 'F',98263579510,'Visaka','Sales',35000, 2500, 1500, 500, 31000),
+('Padma', 35000, '2018-05-06', 'F',98263579510,'Mumbai','Marketing',35000, 2500, 1500, 500, 31000)
 
 
 

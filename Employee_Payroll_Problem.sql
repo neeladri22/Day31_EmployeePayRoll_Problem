@@ -32,6 +32,71 @@ WHERE startdate BETWEEN CAST('2021-01-01' AS DATE) AND GETDATE()
 
 
 
+--Alter table to add gender column
+ALTER TABLE employee_payroll
+add  gender char 
+
+--update the gender 
+update  employee_payroll
+set gender = 'M'
+
+--add field gender field after name field
+select id,name,gender,startdate,salary from employee_payroll
+
+
+--Sum of salary of employee groupby Male employee
+select SUM(salary) FROM employee_payroll where gender = 'M' GROUP BY gender
+
+--Average salary of employee groupby Male employee
+select AVG(salary) FROM employee_payroll where gender = 'M' GROUP BY gender
+
+--Min salary of employee groupby Male employee
+select MIN(salary) FROM employee_payroll where gender = 'M' GROUP BY gender
+
+--Max salary of employee groupby Male employee
+select MAX(salary) FROM employee_payroll where gender = 'M' GROUP BY gender
+
+--Number of employee groupby Male employee
+select COUNT(salary) FROM employee_payroll where gender = 'M' GROUP BY gender
+
+
+--Alter the Table
+ALTER TABLE employee_payroll
+add phone bigint , address varchar(25) default 'Visaka', department varchar(20) 
+
+select * from employee_payroll
+
+--updating the phone, address and department field 
+update employee_payroll
+set phone = 8529637414, address = 'Visaka', department = 'ECE' where name = 'Neeladri'
+
+update employee_payroll
+set phone = 6325698741, address = 'Ichapuram', department = 'MEC' where name = 'Raji'
+
+
+
+--Altering the column deparment to not null
+ALTER table employee_payroll
+alter column department varchar(20) not null
+
+--Altering the column address to not null
+ALTER table employee_payroll
+alter column address varchar(25)  not null
+
+--insert the data into employee_payroll table
+insert into employee_payroll values ('Raji',20000,'2019-12-15','M',7896541365,'amzon','Production')
+
+
+--Altering the table by adding additional information regarding salaryies of employee
+ALTER TABLE employee_payroll
+add BasicPay float, Deductions float, TaxablePay float, IncomeTax float, NetPay float
+
+--updating the phone, address and department field 
+update employee_payroll
+set BasicPay = 25000, Deductions = 2000, TaxablePay = 1000, IncomeTax = 500, NetPay= 21500 where name = 'Neeladri'
+
+update employee_payroll
+set BasicPay = 20000, Deductions = 1000, TaxablePay = 1000, IncomeTax = 200, NetPay= 18000 where name = 'Raji'
 
 
 

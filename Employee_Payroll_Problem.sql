@@ -130,6 +130,8 @@ set BasicPay = 35000, Deductions = 2500, TaxablePay = 1500, IncomeTax = 500, Net
 insert into employee_payroll values ('Padma', 35000, '2018-05-06', 'F',98263579510,'Visaka','Sales',35000, 2500, 1500, 500, 31000),
 ('Padma', 35000, '2018-05-06', 'F',98263579510,'Mumbai','Marketing',35000, 2500, 1500, 500, 31000)
 
+--check for composite or multivaled data
+select * from employee_payroll where name = 'Padma'
 
 
 
